@@ -1,14 +1,14 @@
 {
-  "name": "react-nprogress",
-  "version": "1.0.0",
+  "name": "react-slim-progress",
+  "version": "0.1.0",
   "description": "Youtube style slim progress bar for React",
-  "main": "./lib/react-nprogress.js",
+  "main": "./lib/react-progress.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ruanyl/react-progress-bar"
+    "url": "https://github.com/ruanyl/react-slim-progress"
   },
   "keywords": [
     "progress",
