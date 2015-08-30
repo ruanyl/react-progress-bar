@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "react": "^0.13.3",
-    "react-slim-progress": "^0.4.0"
+    "react-slim-progress": "^0.5.1"
   },
   "devDependencies": {
     "babel-core": "^5.8.23",
