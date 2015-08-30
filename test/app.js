@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Progress from '../lib/react-progress';
+import Progress from 'react-slim-progress';
 
 export default class App extends Component {
   constructor() {
