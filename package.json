@@ -2,7 +2,7 @@
   "name": "react-slim-progress-example",
   "version": "0.1.0",
   "description": "Youtube style slim progress bar for React",
-  "main": "./lib/react-progress.js",
+  "main": "./app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "react": "^0.13.3",
-    "react-slim-progress": "^0.2.0"
+    "react-slim-progress": "^0.4.0"
   },
   "devDependencies": {
     "babel-core": "^5.8.23",
