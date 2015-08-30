@@ -21015,19 +21015,21 @@
 
 	'use strict';
 	
+	var _get = __webpack_require__(159)['default'];
+	
+	var _inherits = __webpack_require__(173)['default'];
+	
+	var _createClass = __webpack_require__(184)['default'];
+	
+	var _classCallCheck = __webpack_require__(187)['default'];
+	
+	var _Object$assign = __webpack_require__(189)['default'];
+	
+	var _interopRequireDefault = __webpack_require__(1)['default'];
+	
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var _react = __webpack_require__(2);
 	
@@ -21058,7 +21060,7 @@
 	        WebkitTransition: this.props.speed + 's width, ' + this.props.speed + 's background-color',
 	        transition: this.props.speed + 's width, ' + this.props.speed + 's background-color'
 	      };
-	      progressStyle = Object.assign({}, progressStyle, this.props.style);
+	      progressStyle = _Object$assign({}, progressStyle, this.props.style);
 	
 	      if (this.props.color && this.props.color !== 'rainbow') {
 	        progressStyle.backgroundColor = this.props.color;
@@ -21083,6 +21085,81 @@
 	};
 	module.exports = exports['default'];
 
+
+/***/ },
+/* 189 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(190), __esModule: true };
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(191);
+	module.exports = __webpack_require__(171).Object.assign;
+
+/***/ },
+/* 191 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $def = __webpack_require__(169);
+	$def($def.S, 'Object', {assign: __webpack_require__(192)});
+
+/***/ },
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.1 Object.assign(target, source, ...)
+	var toObject = __webpack_require__(193)
+	  , IObject  = __webpack_require__(165)
+	  , enumKeys = __webpack_require__(194);
+	/* eslint-disable no-unused-vars */
+	module.exports = Object.assign || function assign(target, source){
+	/* eslint-enable no-unused-vars */
+	  var T = toObject(target)
+	    , l = arguments.length
+	    , i = 1;
+	  while(l > i){
+	    var S      = IObject(arguments[i++])
+	      , keys   = enumKeys(S)
+	      , length = keys.length
+	      , j      = 0
+	      , key;
+	    while(length > j)T[key = keys[j++]] = S[key];
+	  }
+	  return T;
+	};
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.13 ToObject(argument)
+	var defined = __webpack_require__(167);
+	module.exports = function(it){
+	  return Object(defined(it));
+	};
+
+/***/ },
+/* 194 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// all enumerable object keys, includes symbols
+	var $ = __webpack_require__(162);
+	module.exports = function(it){
+	  var keys       = $.getKeys(it)
+	    , getSymbols = $.getSymbols;
+	  if(getSymbols){
+	    var symbols = getSymbols(it)
+	      , isEnum  = $.isEnum
+	      , i       = 0
+	      , key;
+	    while(symbols.length > i)if(isEnum.call(it, key = symbols[i++]))keys.push(key);
+	  }
+	  return keys;
+	};
 
 /***/ }
 /******/ ]);
