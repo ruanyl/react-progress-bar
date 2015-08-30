@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Progress from '../lib/react-progress';
+import App from './app';
 
 React.render(
-  <Progress percent={30} color="#ff0000" />,
+  <App />,
   document.body
 );
