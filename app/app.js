@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react/addons';
 import Progress from 'react-slim-progress';
 
 export default class App extends Component {
@@ -6,14 +6,15 @@ export default class App extends Component {
     super();
     this.state = {
       color: '#ff0000',
-      percent: 20
+      percent: 20,
+      done: false
     };
   }
 
   render() {
     return (
       <div>
-        <Progress color={this.state.color} percent={this.state.percent} />
+        {this.state.done ? null : <Progress color={this.state.color} percent={this.state.percent} />}
         <label>Percent: <input type='text' value={this.state.percent} onChange={this.handlePercentChange.bind(this)} /></label>
         <button onClick={this.handleReset.bind(this)}>Reset</button>
         <button onClick={this.handleDecrement.bind(this)}>-20</button>
@@ -25,7 +26,8 @@ export default class App extends Component {
 
   handleReset() {
     this.setState({
-      percent: 0
+      percent: 0,
+      done: false
     });
   }
 
@@ -51,6 +53,11 @@ export default class App extends Component {
     this.setState({
       percent: 100
     });
+    setTimeout(function() {
+      this.setState({
+        done: true
+      });
+    }.bind(this), 500);
   }
 
   handlePercentChange(e) {
